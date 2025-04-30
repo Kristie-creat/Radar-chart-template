@@ -1,0 +1,163 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoChpDefault
+	{font-size:11.0pt;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-NZ style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal>&lt;!DOCTYPE html&gt;</p>
+
+<p class=MsoNormal>&lt;html lang=&quot;en&quot;&gt;</p>
+
+<p class=MsoNormal>&lt;head&gt;</p>
+
+<p class=MsoNormal>  &lt;meta charset=&quot;UTF-8&quot;&gt;</p>
+
+<p class=MsoNormal>  &lt;title&gt;Radar Chart Template&lt;/title&gt;</p>
+
+<p class=MsoNormal>  &lt;style&gt;</p>
+
+<p class=MsoNormal>    body { font-family: Arial, sans-serif; text-align:
+center; padding: 40px; }</p>
+
+<p class=MsoNormal>    svg { margin-top: 20px; }</p>
+
+<p class=MsoNormal>    select { font-size: 1em; padding: 5px; }</p>
+
+<p class=MsoNormal>  &lt;/style&gt;</p>
+
+<p class=MsoNormal>&lt;/head&gt;</p>
+
+<p class=MsoNormal>&lt;body&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&lt;h2&gt;How confident are you?&lt;/h2&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&lt;label for=&quot;confidence&quot;&gt;Select your
+level:&lt;/label&gt;</p>
+
+<p class=MsoNormal>&lt;select id=&quot;confidence&quot;
+onchange=&quot;updateChart()&quot;&gt;</p>
+
+<p class=MsoNormal>  &lt;option value=&quot;20&quot;&gt;Very Low&lt;/option&gt;</p>
+
+<p class=MsoNormal>  &lt;option value=&quot;40&quot;&gt;Low&lt;/option&gt;</p>
+
+<p class=MsoNormal>  &lt;option value=&quot;60&quot;&gt;Medium&lt;/option&gt;</p>
+
+<p class=MsoNormal>  &lt;option value=&quot;80&quot;
+selected&gt;High&lt;/option&gt;</p>
+
+<p class=MsoNormal>  &lt;option value=&quot;100&quot;&gt;Very
+High&lt;/option&gt;</p>
+
+<p class=MsoNormal>&lt;/select&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&lt;svg id=&quot;chart&quot; width=&quot;300&quot;
+height=&quot;300&quot; viewBox=&quot;-150 -150 300 300&quot;&gt;</p>
+
+<p class=MsoNormal>  &lt;circle r=&quot;100&quot; stroke=&quot;#ccc&quot;
+fill=&quot;none&quot;/&gt;</p>
+
+<p class=MsoNormal>  &lt;circle r=&quot;80&quot; stroke=&quot;#eee&quot;
+fill=&quot;none&quot;/&gt;</p>
+
+<p class=MsoNormal>  &lt;circle r=&quot;60&quot; stroke=&quot;#eee&quot;
+fill=&quot;none&quot;/&gt;</p>
+
+<p class=MsoNormal>  &lt;circle r=&quot;40&quot; stroke=&quot;#eee&quot;
+fill=&quot;none&quot;/&gt;</p>
+
+<p class=MsoNormal>  &lt;circle r=&quot;20&quot; stroke=&quot;#eee&quot;
+fill=&quot;none&quot;/&gt;</p>
+
+<p class=MsoNormal>  &lt;line x1=&quot;0&quot; y1=&quot;0&quot;
+x2=&quot;100&quot; y2=&quot;0&quot; stroke=&quot;#aaa&quot;/&gt;</p>
+
+<p class=MsoNormal>  &lt;text x=&quot;110&quot; y=&quot;5&quot;
+font-size=&quot;14&quot;&gt;Confidence&lt;/text&gt;</p>
+
+<p class=MsoNormal>  &lt;polygon id=&quot;shape&quot; fill=&quot;rgba(0, 123,
+255, 0.4)&quot; stroke=&quot;#007bff&quot;&gt;&lt;/polygon&gt;</p>
+
+<p class=MsoNormal>&lt;/svg&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&lt;script&gt;</p>
+
+<p class=MsoNormal>function updateChart() {</p>
+
+<p class=MsoNormal>  const value =
+parseInt(document.getElementById(&quot;confidence&quot;).value);</p>
+
+<p class=MsoNormal>  const angle = 0; // Single variable = 0 degrees</p>
+
+<p class=MsoNormal>  const x = value * Math.cos(angle * Math.PI / 180);</p>
+
+<p class=MsoNormal>  const y = value * Math.sin(angle * Math.PI / 180);</p>
+
+<p class=MsoNormal> 
+document.getElementById(&quot;shape&quot;).setAttribute(&quot;points&quot;,
+`0,0 ${x},${y}`);</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>// Initialize chart</p>
+
+<p class=MsoNormal>updateChart();</p>
+
+<p class=MsoNormal>&lt;/script&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&lt;/body&gt;</p>
+
+<p class=MsoNormal>&lt;/html&gt;</p>
+
+</div>
+
+</body>
+
+</html>
